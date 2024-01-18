@@ -1,0 +1,68 @@
+.contact-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background-color: #DCF2F1;
+    height: 100vh;
+    width: 100%;
+}
+
+.contact-wrapper h1 {
+    font-size: 30px; /* Set the font size for the text */
+    margin-bottom: 10px; /* Add bottom margin to create space between text and button */
+    justify-content: center; /* Center the text */
+    text-align: center;
+}
+
+.sym_checker {
+    font-size:25px;
+    display: block; /* Ensure the button is a block-level element */
+    margin: 10px auto; /* Center the button horizontally and add top margin */
+    background-color: #0F1035;
+    color: #7FC7D9;
+    padding: 25px 35px; /* Add padding to the button for better appearance */
+    margin: 20px;
+    border: none; /* Remove default button border */
+    border-radius: 40px; /* The value for the desired level of roundness */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+}
+
+.sym_checker:hover {
+    background-color: #0F1035; /* Change background color on hover */
+    color: #00ddff; /* Change text color on hover */
+}
+
+.header{
+    font-weight: bold;
+    font-size: 35px;
+    margin-left: 35px;
+    margin-top: 35px;
+}
+
+.work_how{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
+    text-align: center;
+}
+
+.text-container {
+    flex: 0 0 30%; /* Adjust the width of each text-image container */
+    margin: 10px;
+}
+
+.text {
+    font-size: 24px;
+}
+
+img{
+    width:100%;
+    max-width: 1000px;
+    height:auto;
+    border-radius: 8px;
+}

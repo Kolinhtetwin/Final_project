@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<title>Blog Post - MedScan Insight</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/blog-post.css')}}">
+<script src="https://kit.fontawesome.com/4abb1433f5.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block body %}
+
+<article class="blog-post">
+    <img src="{{ url_for('static',filename='blog_post_1.jpg')}}" alt="Blog Post Image">
+
+    <h1 class="h1">From Symptoms to Solutions: A Comprehensive Guide to COVID-19</h1>
+
+    <div class="content">
+        <p class="metadata">From Centers for Disease Control and Prevention</p>
+        <p class="metadata">Published on January 10, 2024</p>
+
+        <p>
+            In the tumultuous landscape of the COVID-19 pandemic, knowledge is a powerful ally.
+            This comprehensive guide aims to provide a holistic understanding of the disease,
+            covering everything from its symptoms to the solutions that are steering us toward
+            a brighter, healthier future.
+        </p>
+        <h3>Unmasking the Symptoms</h3>
+        <p>
+            COVID-19 doesn't always announce its presence with a bang. The symptoms can range from
+            mild to severe, including fever, cough, shortness of breath, and fatigue. Possible symptoms include:
+            Fever or chills, Cough, Shortness of breath or difficulty breathing, Fatigue, Muscle or body aches,
+            Headache, New loss of taste or smell, Sore throat, Congestion or runny nose, Nausea or vomiting, Diarrhea.
+            Symptoms may change with new COVID-19 variants and can vary depending on vaccination status.
+        </p>
+        <p>
+            Understanding how the virus spreads is key to curbing its advance. Respiratory droplets and aerosols
+            are the primary culprits, emphasizing the importance of measures like mask-wearing, social distancing,
+            and good hand hygiene in breaking the transmission chain.
+        </p>
+        <h3>The Role of Testing and Vaccines</h3>
+        <p>
+            Testing has emerged as a pivotal tool in the fight against COVID-19. From PCR to rapid antigen tests,
+            diagnostic tools help identify and isolate cases promptly, preventing further spread. Regular testing,
+            particularly in high-risk environments, remains an essential component of pandemic management.
+        </p>
+        <p>
+            The development and distribution of COVID-19 vaccines represent a monumental achievement in modern medicine.
+            These vaccines not only protect individuals from severe illness but also contribute to community-wide
+            immunity, paving the way for a safer world.
+        </p>
+        <p>
+            For those affected by COVID-19, timely and appropriate medical care is crucial. From antiviral medications
+            to supportive therapies, advancements in treatment protocols have improved outcomes and reduced the severity
+            of the disease.
+        </p>
+        <p>
+           The fight against COVID-19 transcends borders. Global collaboration among scientists, researchers,
+            and healthcare professionals has accelerated the pace of understanding the virus and developing
+            effective solutions. The adaptability of societies and individuals in implementing preventive measures
+            has been equally instrumental.
+        </p>
+        <p>
+            As we navigate the complex terrain of COVID-19, armed with knowledge and preventive strategies,
+            we inch closer to a post-pandemic era. From recognizing symptoms to embracing vaccination, each step
+            contributes to a collective effort to overcome the challenges posed by this formidable adversary.
+            By staying informed and implementing practical solutions, we can move beyond the shadows of the pandemic
+            and towards a healthier, more resilient future.
+        </p>
+    </div>
+
+    <p class="read-more">
+        <a href="/explore"><i class="fa-solid fa-arrow-left"></i>  Back to Explore</a>
+    </p>
+</article>
+
+{% endblock %}

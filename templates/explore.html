@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Explore Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/explore.css')}}">
+{% endblock %}
+
+{% block body %}
+    <header>Trending articles</header>
+
+    <div class="blog-container">
+        <div class="blog">
+            <img src="{{ url_for('static',filename='blog_post_1.jpg')}}" alt="First Blog Image">
+            <h2>From Symptoms to Solutions: A Comprehensive Guide to COVID-19</h2>
+            <p>Understanding how the virus spreads is key to curbing its advance. Regular testing, particularly in high-risk environments,
+                remains an essential component of pandemic management.</p>
+            <a href="/blog_post_1">Read more</a>
+        </div>
+
+        <div class="blog">
+            <img src="{{ url_for('static',filename='blog_post_2.jpg')}}" alt="Second Blog Image">
+            <h2>Blog Title 2</h2>
+            <p>Description of the second blog. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="/blog_post_2">Read more</a>
+        </div>
+
+        <div class="blog">
+            <img src="{{ url_for('static',filename='blog_post_3.jpeg')}}" alt="Third Blog Image">
+            <h2>Blog Title 3</h2>
+            <p>Description of the third blog. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#">Read more</a>
+        </div>
+    </div>
+{% endblock %}

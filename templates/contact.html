@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Contact Us</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}" >
+
+{% endblock %}
+
+{% block body %}
+<div class="contact-wrapper">
+    <div class = "Text">
+        <h1> Thank you for using my website!!</h1>
+        <p>  From this contact form, you can connect, suggest, complain any problems.
+            Replaying will take one to three weeks from the time of sending feedback through the contact form.</p>
+    </div>
+    <!-- Contact Form -->
+    <div class="form-container">
+        <form class="form">
+            <h2>Contact Us</h2>
+            <p type="Name:"><input type="text" placeholder="Write your name here.." required></input></p>
+            <p type="Email:"><input type="email" placeholder="Let us know how to contact you back.."></input></p>
+            <p type="Message:"><input placeholder="What would you like to tell us.."></input></p>
+            <button>Send Message</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

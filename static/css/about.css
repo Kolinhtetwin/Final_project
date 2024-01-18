@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: 2px solid black;
+}
+
+.contact {
+    font-size: 18px;
+    text-align: left;
+    display: inline-block;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 35px;
+    margin-top: 35px;
+
+}
+
+.contact-wrapper {
+    display: flex;
+    background-color: #F8F8F8; /* Set background color for the second section */
+}
+
+.contact-wrapper-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
+    text-align: center;
+    background-color: #EFEFEF; /* Set background color for the third section */
+}
+
+.text-container {
+    flex: 0 0 30%;
+    margin: 10px;
+}
+
+.text {
+    font-size: 24px;
+}
+
+img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.wrapper {
+    display: flex;
+    background-color: #DADADA; /* Set background color for the fourth section */
+}
+
+.photo-section {
+    width: 50%;
+}
+
+.photo-section img {
+    width: 100%;
+    height: auto;
+}
+
+.text-section {
+    width: 50%;
+    padding: 20px;
+    background-color: #F5F5F5; /* Set background color for the fifth section */
+}
+
+.disease-list {
+    list-style-type: bullet;
+    columns: 3;
+    background-color: #6E98E6;
+}
+
+.disease-list li {
+    margin-bottom: 10px;
+}

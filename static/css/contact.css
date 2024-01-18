@@ -1,0 +1,98 @@
+.contact-wrapper {
+    display:flex;
+    background-color: #6E98E6;
+    height: 535px;
+    width: 100%;
+    justify-content: center;  /* Center the form horizontally */
+}
+
+.Text {
+    flex: 1;
+    color: white;
+    font-size: 10;
+    text-align: justify;
+    margin-left: 60px;
+    margin-top: 100px;
+}
+
+/* Styling for the form container */
+.form-container {
+    flex:1;
+}
+
+/* Styling for the form */
+.form {
+    width: 340px;
+    height: 440px;
+    background: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin-left: 50px;
+    margin-top: 70px; /* Center the form vertically */
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+
+}
+/* Styling for the heading 2 */
+h2 {
+    margin: 10px 0;
+    padding-bottom: 10px;
+    width: 180px;
+    color: #78788c;
+    border-bottom: 3px solid #78788c;
+}
+
+/* Styling for input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .3s;
+    border-bottom: 2px solid #bebed2;
+}
+
+/* Styling for input fields when focused */
+input:focus {
+    border-bottom: 2px solid #78788c;
+}
+
+/* Styling for paragraphs before input fields */
+p:before {
+    content: attr(type);
+    display: block;
+    margin: 28px 0 0;
+    font-size: 14px;
+    color: #5a5a5a;
+}
+
+/* Styling for buttons */
+button {
+    float: left;
+    padding: 8px 12px;
+    margin: 8px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #78788c;
+    background: 50;
+    color: #5a5a6e;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+/* Styling for buttons when hovered */
+button:hover {
+    background: #78788c;
+    color: #fff;
+}
+
+/* Styling for spans */
+span {
+    margin: 0 5px 0 15px;
+}

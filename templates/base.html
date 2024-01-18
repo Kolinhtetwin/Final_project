@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation_style.css') }}">
+    <script src="https://kit.fontawesome.com/4abb1433f5.js" crossorigin="anonymous"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="container">
+        <div class="logo">MedScan Insight Logo</div>
+        <input type="checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="nav_icon" style="font-size: 24px;">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label for="nav-toggle" class="nav_icon nav_cross" style="font-size: 24px;">
+            <i class="fas fa-times"></i>
+        </label>
+        <ul class="navbar">
+            <!-- Navigation bar with the active page color and check if the active_page is what page or not
+                and in CSS change the color with .active -->
+            <li><a {% if active_page=='home' %}class="active"{% endif %} href="/">Home</a></li>
+            <li><a {% if active_page=='about' %}class="active"{% endif %} href="/about">About</a></li>
+            <li><a {% if active_page=='explore' %}class="active"{% endif %} href="/explore">Explore</a></li>
+            <li><a {% if active_page=='symptom_checker' %}class="active"{% endif %} href="#">Symptom Checker</a></li>
+            <li><a {% if active_page=='contact' %}class="active"{% endif %} href="/contact">Contact Us</a></li>
+            <li><a {% if active_page=='profile' %}class="active"{% endif %} href="#">Profile</a></li>
+        </ul>
+    </div>
+
+    {% block body %}{% endblock %}
+
+    <footer>
+        <div>
+            <p>MedScan Insight</p>
+        </div>
+        <div>
+            <a href="">Terms and Conditions</a>
+            <a href="">Privacy</a>
+        </div>
+        <div>
+            @ The symptom checker on this website is not a substitute for professional medical advice, diagnosis, or treatment.
+        </div>
+    </footer>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        var navToggle = document.getElementById("nav-toggle");
+        navToggle.addEventListener("change", function () {
+            var navbar = document.querySelector(".navbar");
+            var navIcon = document.querySelector(".nav_icon");
+            var navCross = document.querySelector(".nav_cross");
+
+            if (navToggle.checked) {
+                navbar.style.display = "flex";
+                navIcon.style.display = "none";
+                navCross.style.display = "block";
+            } else {
+                navbar.style.display = "none";
+                navIcon.style.display = "block";
+                navCross.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

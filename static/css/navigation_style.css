@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background-color: #0F1035;
+    height: 100px;
+    display:flex;
+    align-items: center;
+    margin: 0;
+}
+
+.logo {
+    font-size: 24px;
+    margin-right: 20px;
+    align-items: center;
+    order: 1;
+    display: flex;
+    color:white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    margin-left:auto;
+    order: 2;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #F3FAFF;
+    font-size: 18px;
+}
+.navbar a:hover{
+   color: #0D9EBB;
+}
+.navbar .active{
+    color: #0D9EBB;
+}
+
+/* Style the checkbox and hide it */
+#nav-toggle {
+    display: none;
+}
+
+.nav_icon {
+    color: #F3FAFF;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Add this media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        gap: 1em;
+        background-color: #0F1035;
+        margin-right: auto;
+        overflow: hidden; /* Initially hide the links */
+        display: none;
+    }
+
+    .navbar a {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        font-size: 15px;
+    }
+
+    #nav-toggle:checked + .navbar {
+        display: flex; /* Show the links when the checkbox is checked */
+        font-size: 15px;
+        overflow: auto;
+    }
+
+    .nav_icon {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        align-items:center;
+    }
+
+    .nav_cross {
+        display: none;
+    }
+
+    #nav-toggle:checked + .navbar .nav_icon {
+        display: none;
+    }
+
+    #nav-toggle:checked + .navbar .nav_cross {
+        display: block;
+    }
+}
+
+footer {
+    background-color: #0F1035;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+}
+
+footer div {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}

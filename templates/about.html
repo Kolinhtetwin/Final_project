@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<title>About MedScan Insight</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}">
+{% endblock %}
+{% block body %}
+
+<header>About MedScan Insight</header>
+    <div class="contact">
+        Unlocking medical breakthroughs, one insight at a time. MedScan Insight empowers healthcare professionals
+        with AI-powered tools to transform complex data into actionable insights. MedScan Insight excels in its
+        ability to predict, diagnose, and recommend personalized treatment plans through machine learning algorithms.
+    </div>
+
+    <div class="header"> MedScan Insight utilize advanced machine learning model.</div>
+    <div class="contact-wrapper">
+        <div class="text-section"> At MedScan Insight, I am dedicated to harnessing the power of advanced technologies,
+            including artificial intelligence and data analytics, to unlock unprecedented insights
+            from complex medical datasets.</div>
+        <div class="photo-section">
+            <!--Add your photo here-->
+            <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Disease that can be checked">
+        </div>
+    </div>
+    <p class="header"> Learn how MedScan Insight works</p>
+    <div class="contact-wrapper-2">
+            <div class="text-container">
+                <p class="text">1. Share the symptoms through symptom checker</p>
+                <img src="{{ url_for('static', filename='undraw_chat.svg')}}" alt="Chat with the symptom checker">
+            </div>
+            <div class="text-container">
+                <p class="text">2. Get Feedback based on your symptoms</p>
+                <img src="{{ url_for('static', filename='report-analysis.svg')}}" alt="Get Feedback">
+            </div>
+            <div class="text-container">
+                <p class="text">3. Take precaution with the recommendation</p>
+                <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Take medicine">
+            </div>
+    </div>
+    <div class="wrapper">
+        <div class="photo-section">
+            <!--Add your photo here-->
+            <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Disease that can be checked">
+        </div>
+        <div class="text-section">
+            <h2>Diseases that can be checked by MedScan's Insight</h2>
+                <ul class="disease-list">
+                    <!-- Add your diseases here -->
+                    <li>Disease 1</li>
+                    <li>Disease 2</li>
+                    <li>Disease 3</li>
+                    <li>Disease 1</li>
+                    <li>Disease 2</li>
+                    <li>Disease 3</li>
+                    <li>Disease 1</li>
+                    <li>Disease 2</li>
+                    <li>Disease 3</li>
+                    <li>Disease 1</li>
+                    <li>Disease 2</li>
+                    <li>Disease 3</li>
+                    <!-- Add more diseases as needed -->
+                </ul>
+        </div>
+    </div>
+
+{% endblock %}

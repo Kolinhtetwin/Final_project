@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% block head %}
+<title>Home Page</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+{% endblock %}
+{% block body %}
+
+    <div class="contact-wrapper">
+        <h1>Health care is not privilege.<br>Check your health now with <br>symptom checker now.</h1>
+        <button onclick="location.href='/contact'" class="sym_checker">Symptom Checker</button>
+    </div>
+
+    <header class="header">How its works</header>
+        <div class="work_how">
+            <div class="text-container">
+                <p class="text">1. Share the symptoms through symptom checker</p>
+                <img src="{{ url_for('static', filename='undraw_chat.svg')}}" alt="Chat with the symptom checker">
+            </div>
+            <div class="text-container">
+                <p class="text">2. Get Feedback based on your symptoms</p>
+                <img src="{{ url_for('static', filename='report-analysis.svg')}}" alt="Get Feedback">
+            </div>
+            <div class="text-container">
+                <p class="text">3. Take precaution with the recommendation</p>
+                <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Take medicine">
+            </div>
+        </div>
+
+{% endblock %}
