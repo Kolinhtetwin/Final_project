@@ -41,7 +41,7 @@ def get_symptoms_list():
 
 
 def get_symptoms():
-    df = pd.read_csv(f'{basedir}/datasets/symptom_severity.csv')
+    df = pd.read_csv(f'{basedir}/datasets/Symptom_severity.csv')
     symptom_list = df['itching'].tolist()
     symptom_list.append('itching')
     return symptom_list

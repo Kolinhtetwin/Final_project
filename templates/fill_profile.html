@@ -9,7 +9,7 @@
     <body class="profile">
         <div class="profile-container">
             <h2>Create Your Profile</h2>
-            <form method="POST" class="profile-form">
+            <form method="POST" class="profile-form" enctype="multipart/form-data">
                 {{ form.csrf_token }}
                 <div class="profile-group">
                     <label for="profile_pic" class="profile-label">Profile Picture:</label>

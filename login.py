@@ -42,8 +42,12 @@ def complete_profile():
             filename = secure_filename(image.filename)
             profile_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             image.save(profile_path)
+
+            print(f"Filename: {filename}")
+            print(f"Profile Path: {profile_path}")
         else:
             profile_path = os.path.join(app.config['UPLOAD_FOLDER'], 'default_profile_pic.jpeg')
+            print(f"Default Profile Path: {profile_path}")
         full_profile = Profile(user_id=current_user.id, profile_pic=profile_path, username=form.username.data, age=form.age.data,
                                gender=form.gender.data, dob=form.dob.data)
         db.session.add(full_profile)
