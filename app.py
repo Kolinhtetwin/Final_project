@@ -1,39 +1,23 @@
-from flask import Flask, url_for, render_template
+# app.py
+from home import home
+from about import about
+from contact_us import contact
+from login import login_manage
+from symptom_checker import symptom_checker
+from init_app import app, db
+from add_post import add_post
+from blogpost import blogpost
+from explore import explore
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def home():
-    active_page = 'home'
-    return render_template('home.html', active_page=active_page)
-
-
-@app.route('/about')
-def about():
-    active_page = 'about'
-    return render_template('about.html', active_page=active_page)
-
-
-@app.route('/contact')
-def contact():
-    active_page = 'contact'
-    return render_template('contact.html', active_page=active_page)
-
-@app.route('/explore')
-def explorer():
-    active_page = 'explore'
-    return render_template('explore.html',active_page=active_page)
-
-@app.route('/blog_post_1')
-def blog_post_1():
-    active_page = 'explore'
-    return render_template('blog_post_1.html',active_page= active_page)
-
-@app.route('/blog_post_2')
-def blog_post_2():
-    active_page = 'explore'
-    return render_template('blog_post_2.html', active_page=active_page)
+# Register blueprints for different parts of the website
+app.register_blueprint(home)
+app.register_blueprint(about)
+app.register_blueprint(contact)
+app.register_blueprint(login_manage)
+app.register_blueprint(symptom_checker)
+app.register_blueprint(add_post)
+app.register_blueprint(blogpost)
+app.register_blueprint(explore)
 
 if __name__ == '__main__':
     app.run(debug=True)

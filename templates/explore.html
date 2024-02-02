@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block head %}
     <title>Explore Page</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/explore.css')}}">
@@ -6,30 +7,23 @@
 
 {% block body %}
     <header>Trending articles</header>
-
+    {% if current_user.user_type == 'healthcare_professional' %}
+        <a href="{{ url_for('add_post.upload_post') }}" class="new_post"> Add New Post</a>
+    {% endif %}
     <div class="blog-container">
-        <div class="blog">
-            <img src="{{ url_for('static',filename='blog_post_1.jpg')}}" alt="First Blog Image">
-            <h2>From Symptoms to Solutions: A Comprehensive Guide to COVID-19</h2>
-            <p>Understanding how the virus spreads is key to curbing its advance. Regular testing, particularly in
-                high-risk environments,
-                remains an essential component of pandemic management.</p>
-            <a href="/blog_post_1">Read more</a>
-        </div>
-
-        <div class="blog">
-            <img src="{{ url_for('static',filename='blog_post_2.jpg')}}" alt="Second Blog Image">
-            <h2>How to Fight a Virus: Examples from COVID-19 </h2>
-            <p>Scientists globally are racing to identify the virus's weaknesses, aiming to develop vaccines for
-                prevention and antiviral drugs for the infected. </p>
-            <a href="/blog_post_2">Read more</a>
-        </div>
-
-        <div class="blog">
-            <img src="{{ url_for('static',filename='blog_post_3.jpeg')}}" alt="Third Blog Image">
-            <h2>Blog Title 3</h2>
-            <p>Description of the third blog. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="#">Read more</a>
-        </div>
+        {% for post in posts %}
+            <div class="blog">
+                <img src="{{ url_for('static', filename='images/' + post.image_path.split('/')[-1]) }}" alt="Blog Image">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.description }}</p>
+                <div class="blog-links">
+                    <a href="{{ url_for('blogpost.show_post', post_id=post.id) }}" class="button-link">Read more</a>
+                    {% if current_user.user_type == 'healthcare_professional' %}
+                        <a href="{{ url_for('blogpost.edit_post', post_id=post.id) }}" class="button-link">Edit Post</a>
+                        <a href="{{ url_for('blogpost.delete_post', post_id=post.id) }}" class="button-link delete_btn">Delete Post</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

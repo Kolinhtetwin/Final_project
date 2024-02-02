@@ -1,0 +1,58 @@
+<!-- edit_profile.html -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_profile.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% for message in get_flashed_messages() %}
+        <div class="custom-alert" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+    {% if user_id == current_user.id %}
+        <div class="custom-container">
+            <form method="POST" class="custom-form">
+                {{ form.hidden_tag() }}
+
+                <label for="image" class="image">{{ form.profile_pic.label }}</label>
+
+                <div class="image-input-container">
+                    {{ form.profile_pic(class="form-control") }}
+                    <img src="{{ url_for('static', filename='images/' + current_user.profile.profile_pic.split('/')[-1]) }}" alt="Profile Picture">
+                </div>
+
+                {% if form.profile_pic.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form.profile_pic.errors[0] }}
+                    </div>
+                {% endif %}
+
+                <label for="username" class="form-label">{{ form.username.label }}</label>
+                {{ form.username(class="form-control") }}
+
+                <label for="email" class="form-label">{{ form.email.label }}</label>
+                {{ form.email(class="form-control") }}
+
+                <label for="dob" class="form-label">{{ form.dob.label }}</label>
+                {{ form.dob(class="form-control") }}
+
+                <label for="age" class="form-label">{{ form.age.label }}</label>
+                {{ form.age(class="form-control") }}
+
+                <label for="gender" class="form-label">{{ form.gender.label }}</label>
+                {{ form.gender(class="form-control") }}
+
+                <button type="submit" class="custom-btn">{{ form.submit.label }}</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="custom-alert" role="alert">Sorry! You can't edit this user....</div>
+        <h2>You don't have access to edit this profile. If this is your profile, LogOut and LogIn again to make sure it.</h2>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<!-- symptom_result.html -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Symptom Checker Result</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/symptom_result.css')}}">
+{% endblock %}
+
+{% block body %}
+    <body>
+        <div class="symptom-result-container">
+            <h2>Symptom Checker Result</h2>
+            {% for question in result['questions'] %}
+                <div class="question">
+                    <p>{{ question['text'] }}</p>
+                    <button onclick="answerQuestion('{{ question['id'] }}', 'Yes')">Yes</button>
+                    <button onclick="answerQuestion('{{ question['id'] }}', 'No')">No</button>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+
+    <script>
+        function answerQuestion(questionId, answer) {
+            // You can handle the user's answers using JavaScript
+            // You may want to send the answers back to the server for further processing
+            console.log('User answered:', questionId, answer);
+            // Add your logic here
+        }
+    </script>
+{% endblock %}

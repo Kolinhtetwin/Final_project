@@ -1,0 +1,83 @@
+/* form2.css */
+
+body.form2-body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('../images/login-background-image.jpg'); /* Replace with the path to your background image */
+    background-size: cover;
+    backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+    justify-content: center; /* Center the content vertically */
+}
+
+.form2-container {
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #333;
+}
+
+.logo > img {
+    width: 200px; /* Set the desired width */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.wrapper {
+    height: 83vh;
+}
+
+.no_btn{
+    background-color: red;
+    color: white;
+    padding: 15px;
+    width: 150px;
+    marign-left:15px;
+}
+
+.yes_btn{
+    padding: 15px;
+    width: 150px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .form2-container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+}

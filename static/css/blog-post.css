@@ -1,9 +1,6 @@
 /* blog-post.css */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+
 
 .back_home{
     margin-left: 40px;
@@ -26,13 +23,11 @@ h1 {
 }
 
 .blog-post {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
     text-align: left;
     border-radius: 8px;
     overflow: hidden;
-    text-align: justify;
-
 }
 
 img {
@@ -46,7 +41,6 @@ img {
 .content {
     padding: 20px;
     text-align: left;
-    text-align: justify;
 }
 
 .h1{

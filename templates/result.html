@@ -1,0 +1,77 @@
+<!-- result.html -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Prediction Result</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/result.css')}}">
+    <script>
+        function closeAlert(button) {
+            var alert = button.parentElement;
+            alert.style.opacity = 0;
+            setTimeout(function () {
+                alert.style.display = "none";
+            }, 500);
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          var alerts = document.querySelectorAll('.custom-alert');
+          alerts.forEach(function (alert) {
+            alert.remove();
+          });
+        }, 5000);
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+{% for message in get_flashed_messages() %}
+        <div class="custom-alert" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="btn-close" onclick="closeAlert(this)" aria-label="Close">X</button>
+        </div>
+    {% endfor %}
+<body class="result-body">
+    <div class="result-container">
+        <div class="content">
+            <div>
+                <h3>Based on your symptoms, our program predicted that you may have:</h3>
+                <h2>{{ predicted_disease }}</h2>
+                <hr style="border-top: 1px solid #ddd; margin: 20px 0;">
+
+                <p><em>What are these predictions?</em></p>
+                <div>
+                    <p>{{ predicted_disease_description }}</p>
+                    <p>{{ predicted_disease_description2 }}</p>
+                </div>
+                <h5>Ultimately, this is just a program. Please consult a doctor before reaching any kind of conclusion.
+                </h5>
+                <hr style="border-top: 1px solid #ddd; margin: 20px 0;">
+
+                <p>Condition: {{ condition }}</p>
+                <p><em>Here are some things which you can do:</em></p>
+                {% if predicted_disease_description2 == '' %}
+                <div>
+                    {% for j in precaution_list %}
+                    {{ loop.index }}. {{ j }} <br>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div>
+                    <div>
+                        {% for j in precaution_list %}
+                        {{ loop.index }}. {{ j }} <br>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        {% for j in precaution_list2 %}
+                        {{ loop.index }}. {{ j }} <br>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

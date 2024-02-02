@@ -1,0 +1,83 @@
+/* dashboard.css */
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    min-height: 75vh;
+    margin-right: 20px;
+}
+
+.profile-info {
+    flex: 0 0 15%; /* Take 20% of the available space */
+    padding: 20px;
+    background-color: #ddd;
+}
+
+.profile_pic{
+    width:150px;
+    padding:20px;
+}
+
+.logo > img {
+    width: 200px;
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.disease-info {
+    flex: 1; /* Take the remaining space */
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+.disease-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.disease-info th,
+.disease-info td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.disease-info th {
+    background-color: #f2f2f2;
+}
+
+
+
+
+.profile-info strong {
+    display: block;
+    width: 120px; /* Adjust as needed for consistent spacing */
+    text-decoration: underline cornflowerblue;
+    font-size: 20px;
+}
+
+.user_edit {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+
+}
+
+.user_edit :hover {
+    text-decoration: underline;
+}
+
+.logout_btn{
+    text-decoration: none;
+    background-color: #ab445d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.logout_btn:hover{
+    background-color: #7c0622;
+}
+
+

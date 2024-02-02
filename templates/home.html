@@ -1,29 +1,54 @@
-
 {% extends 'base.html' %}
 {% block head %}
 <title>Home Page</title>
 <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+<script>
+    function closeAlert(button) {
+    var alert = button.parentElement;
+    alert.style.opacity = 0;
+    setTimeout(function () {
+        alert.style.display = "none";
+    }, 500);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+      var alerts = document.querySelectorAll('.custom-alert');
+      alerts.forEach(function (alert) {
+        alert.remove();
+      });
+    }, 5000);
+    });
+</script>
 {% endblock %}
 {% block body %}
+    {% for message in get_flashed_messages() %}
+        <div class="custom-alert" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="btn-close" onclick="closeAlert(this)" aria-label="Close">X</button>
+        </div>
+    {% endfor %}
 
     <div class="contact-wrapper">
         <h1>Health care is not privilege.<br>Check your health now with <br>symptom checker now.</h1>
-        <button onclick="location.href='/contact'" class="sym_checker">Symptom Checker</button>
+        <button onclick="location.href='/symptom_checker'" class="sym_checker">Symptom Checker</button>
     </div>
 
     <header class="header">How its works</header>
         <div class="work_how">
             <div class="text-container">
                 <p class="text">1. Share the symptoms through symptom checker</p>
-                <img src="{{ url_for('static', filename='undraw_chat.svg')}}" alt="Chat with the symptom checker">
+                <img src="{{ url_for('static', filename='images/undraw_chat.svg')}}" alt="Chat with the symptom checker">
             </div>
             <div class="text-container">
                 <p class="text">2. Get Feedback based on your symptoms</p>
-                <img src="{{ url_for('static', filename='report-analysis.svg')}}" alt="Get Feedback">
+                <img src="{{ url_for('static', filename='images/report-analysis.svg')}}" alt="Get Feedback">
             </div>
             <div class="text-container">
                 <p class="text">3. Take precaution with the recommendation</p>
-                <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Take medicine">
+                <img src="{{ url_for('static',filename='images/health-isometric.svg')}}" alt="Take medicine">
             </div>
         </div>
 

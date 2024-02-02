@@ -7,61 +7,107 @@
 {% block body %}
 
 <header>About MedScan Insight</header>
-    <div class="contact">
-        Unlocking medical breakthroughs, one insight at a time. MedScan Insight empowers healthcare professionals
-        with AI-powered tools to transform complex data into actionable insights. MedScan Insight excels in its
-        ability to predict, diagnose, and recommend personalized treatment plans through machine learning algorithms.
-    </div>
+<div class="notice">
+    <img src="{{ url_for('static',filename='/images/idea.png')}}" alt="idea vector" srcset="" width="30px">
+    Unlocking medical breakthroughs, one insight at a time. MedScan Insight empowers healthcare professionals
+    with AI-powered tools to transform complex data into actionable insights. MedScan Insight excels in its
+    ability to predict, diagnose, and recommend personalized treatment plans through machine learning algorithms.
+</div>
 
-    <div class="header"> MedScan Insight utilize advanced machine learning model.</div>
-    <div class="contact-wrapper">
-        <div class="text-section"> At MedScan Insight, I am dedicated to harnessing the power of advanced technologies,
-            including artificial intelligence and data analytics, to unlock unprecedented insights
-            from complex medical datasets.</div>
+
+<div class="contact-wrapper">
+    <div class="content-section">
+
+        <div class="machine-section">
+            <div class="about_header"> MedScan Insight utilize advanced machine learning model.</div>
+            <p class="paragraph">
+                At MedScan Insight, we are dedicated to harnessing the power of advanced technologies, including
+                artificial intelligence and data analytics, to unlock unprecedented insights from complex medical
+                datasets. Our mission is to revolutionize healthcare by providing clinicians with invaluable tools that
+                not only streamline decision-making processes but also contribute to the ongoing evolution of medical
+                research and innovation. Through our commitment to excellence, we aim to be at the forefront of ushering
+                in a new era of data-driven, patient-centric healthcare solutions.
+            </p>
+
+        </div>
         <div class="photo-section">
-            <!--Add your photo here-->
-            <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Disease that can be checked">
+            <img src="{{ url_for('static',filename='/images/about-img.jpg')}}" alt="Disease that can be checked">
         </div>
     </div>
-    <p class="header"> Learn how MedScan Insight works</p>
-    <div class="contact-wrapper-2">
-            <div class="text-container">
-                <p class="text">1. Share the symptoms through symptom checker</p>
-                <img src="{{ url_for('static', filename='undraw_chat.svg')}}" alt="Chat with the symptom checker">
-            </div>
-            <div class="text-container">
-                <p class="text">2. Get Feedback based on your symptoms</p>
-                <img src="{{ url_for('static', filename='report-analysis.svg')}}" alt="Get Feedback">
-            </div>
-            <div class="text-container">
-                <p class="text">3. Take precaution with the recommendation</p>
-                <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Take medicine">
-            </div>
+</div>
+<hr style="border-top: 1px solid #ddd; margin: 20px 0;">
+<p class="learn_how_header"> Learn how MedScan Insight works</p>
+<div class="contact-wrapper-2">
+    <div class="text-container">
+        <p class="text">1. Share the symptoms through symptom checker</p>
+        <img src="{{ url_for('static', filename='images/undraw_chat.svg')}}" alt="Chat with the symptom checker">
     </div>
-    <div class="wrapper">
+    <div class="text-container">
+        <p class="text">2. Get Feedback based on your symptoms</p>
+        <img src="{{ url_for('static', filename='images/report-analysis.svg')}}" alt="Get Feedback">
+    </div>
+    <div class="text-container">
+        <p class="text">3. Take precaution with the recommendation</p>
+        <img src="{{ url_for('static',filename='images/health-isometric.svg')}}" alt="Take medicine">
+    </div>
+</div>
+<hr style="border-top: 1px solid #ddd; margin: 20px 0;">
+<div class="wrapper">
+    <div class="disease-section">
         <div class="photo-section">
-            <!--Add your photo here-->
-            <img src="{{ url_for('static',filename='health-isometric.svg')}}" alt="Disease that can be checked">
+            <!-- Add your photo here -->
+            <img src="{{ url_for('static', filename='/images/about-img-3.jpg')}}" alt="Disease that can be checked"
+                class="about_img_3">
         </div>
         <div class="text-section">
             <h2>Diseases that can be checked by MedScan's Insight</h2>
-                <ul class="disease-list">
-                    <!-- Add your diseases here -->
-                    <li>Disease 1</li>
-                    <li>Disease 2</li>
-                    <li>Disease 3</li>
-                    <li>Disease 1</li>
-                    <li>Disease 2</li>
-                    <li>Disease 3</li>
-                    <li>Disease 1</li>
-                    <li>Disease 2</li>
-                    <li>Disease 3</li>
-                    <li>Disease 1</li>
-                    <li>Disease 2</li>
-                    <li>Disease 3</li>
-                    <!-- Add more diseases as needed -->
-                </ul>
+            <ul class="disease-list">
+                <!-- Add your diseases here -->
+                <li>Fungal infection</li>
+                <li>Covid</li>
+                <li>Allergy</li>
+                <li>GERD (Gastroesophageal reflux disease)</li>
+                <li>Chronic cholestasis</li>
+                <li>Drug Reaction</li>
+                <li>Peptic ulcer disease</li>
+                <li>AIDS</li>
+                <li>Diabetes</li>
+                <li>Gastroenteritis</li>
+                <li>Bronchial Asthma</li>
+                <li>Hypertension</li>
+                <li>Migraine</li>
+                <li>Cervical spondylosis</li>
+                <li>Paralysis (brain hemorrhage)</li>
+                <li>Jaundice</li>
+                <li>Malaria</li>
+                <li>Chickenpox</li>
+                <li>Dengue</li>
+                <li>Typhoid</li>
+                <li>Hepatitis A</li>
+                <li>Hepatitis B</li>
+                <li>Hepatitis C</li>
+                <li>Hepatitis D</li>
+                <li>Hepatitis E</li>
+                <li>Alcoholic hepatitis</li>
+                <li>Tuberculosis</li>
+                <li>Common Cold</li>
+                <li>Pneumonia</li>
+                <li>Dimorphic hemorrhoids (piles)</li>
+                <li>Heart attack</li>
+                <li>Varicose veins</li>
+                <li>Hypothyroidism</li>
+                <li>Hyperthyroidism</li>
+                <li>Hypoglycemia</li>
+                <li>Osteoarthritis</li>
+                <li>Arthritis</li>
+                <li>(Vertigo) Paroxysmal Positional Vertigo</li>
+                <li>Acne</li>
+                <li>Urinary tract infection</li>
+                <li>Psoriasis</li>
+                <li>Impetigo</li>
+            </ul>
         </div>
     </div>
+</div>
 
 {% endblock %}

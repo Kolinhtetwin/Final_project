@@ -1,0 +1,30 @@
+<!-- form2.html -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Additional Symptoms</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/form2.css')}}">
+{% endblock %}
+
+{% block body %}
+    <body class="form2-body">
+        <div class="form2-container">
+            <h1>Additional Symptoms</h1>
+            <form action="/process_form2" method="POST">
+                {% if symptoms %}
+                    <div class="form-group">
+                        <label for="response">Are you suffering {{ current_symptom }} ?</label>
+                        <br>
+                        <button name="response" value="yes" class="yes_btn">Yes</button>
+                        <button name="response" value="no" class="no_btn">No</button>
+                    </div>
+                    <input type="hidden" name="current_symptom" value="{{ current_symptom }}">
+                    <input type="hidden" name="remaining_symptoms" value="{{ remaining_symptoms }}" >
+                {% else %}
+                    <p>No more symptoms.</p>
+                {% endif %}
+            </form>
+        </div>
+    </body>
+{% endblock %}

@@ -1,30 +1,42 @@
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure viewport height */
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    flex: 1; /* Expand to fill available space */
 }
 
 .container {
     background-color: #0F1035;
     height: 100px;
-    display:flex;
+    display: flex;
     align-items: center;
     margin: 0;
+    width: 100%; /* Set the width to 100% */
 }
 
 .logo {
-    font-size: 24px;
-    margin-right: 20px;
-    align-items: center;
-    order: 1;
-    display: flex;
-    color:white;
+    display: flex;          /* Use flexbox for layout */
+    align-items: center;    /* Center items vertically */
+    order: 1;               /* Set the order in the flex container */
+    margin-left: 30px;      /* Add left margin */
+    margin-right: 20px;     /* Add right margin */
+    max-width: 200px;       /* Set the maximum width of the element */
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    margin-left:auto;
+    margin-left: auto;
     order: 2;
+    width: 100%;
+    justify-content: flex-end; /* Align the items to the right */
+    list-style: none;
 }
 
 .navbar li {
@@ -107,10 +119,15 @@ body {
 footer {
     background-color: #0F1035;
     color: white;
-    padding: 10px;
     width: 100%;
     bottom: 0;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    justify-content: flex-end;
 }
+
 
 footer div {
     margin-bottom: 10px;
@@ -120,4 +137,35 @@ footer a {
     color: white;
     text-decoration: none;
     margin-right: 10px;
+}
+
+.logo_name{
+    color:white;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999; /* Set a high z-index to ensure it appears above other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    opacity: 1; /* Initial opacity */
+    transition: opacity 0.5s; /* Add a transition for smooth animation */
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #721c24;
+    font-weight: bold;
+    font-size: 14px;
 }

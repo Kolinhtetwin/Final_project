@@ -1,0 +1,29 @@
+<!-- login.html -->
+
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+    <body class="login-body">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form method="post">
+                {{ form.csrf_token }}
+
+                <label for="email">Email: </label>
+                {{ form.email(size=30, id='email', required=True) }}
+
+                <label for="password">Password:</label>
+                {{ form.password(size=30, id='password', required=True) }}
+
+                {{ form.submit() }}
+                <label for="register" class="register">Don't you have an account?</label>
+                <a href="{{ url_for('login_manage.register') }}" class="register_btn"> Register Here! </a>
+            </form>
+        </div>
+    </body>
+{% endblock %}

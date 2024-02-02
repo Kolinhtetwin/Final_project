@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Add Post</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/add_post.css')}}">
+{% endblock %}
+
+{% block body %}
+
+    {% for message in get_flashed_messages() %}
+        <div class="custom-alert" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+        <!-- Content for authenticated users -->
+        <div class="custom-container">
+            <form method="POST" class="custom-form" enctype=multipart/form-data>
+                {{ form.hidden_tag() }}
+
+                <label for="image" class="image">{{ form.image.label }}</label>
+                <input type="file" name="image" id="image" class="form-control">
+                    {% if form.image.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ form.image.errors[0] }}
+                        </div>
+                    {% endif %}
+
+                <label for="title" class="form-label">{{ form.title.label }}</label>
+                <input type="text" id="title" name="title" class="form-control">
+
+                <label for="slug" class="form-label">{{ form.slug.label }}</label>
+                <input type="text" id="slug" name="slug" class="form-control">
+
+                <label for="author" class="form-label">{{ form.author.label }}</label>
+                <input type="text" id="author" name="author" class="form-control">
+
+                <label for="description" class="form-label">{{ form.description.label }}</label>
+                <input type="text" id="description" name="description" class="form-control">
+
+                <label for="content" class="form-label">{{ form.content.label }}</label>
+                <textarea id="content" name="content" class="form-control" rows="15"></textarea>
+
+                <button type="submit" class="custom-btn">{{ form.submit.label }}</button>
+            </form>
+        {{ ckeditor.load() }}
+        {{ ckeditor.config(name='content') }}
+        </div>
+
+{% endblock %}

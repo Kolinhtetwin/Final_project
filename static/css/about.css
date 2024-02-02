@@ -1,91 +1,211 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+/* about.css */
+
+
+
+/* Additional styles for the logo */
+.logo > img {
+    width: 200px; /* Set the desired width */
+    height: auto; /* Maintain the aspect ratio */
 }
 
-header {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 30px;
-    border-bottom: 2px solid black;
-}
-
-.contact {
-    font-size: 18px;
-    text-align: left;
-    display: inline-block;
-    padding: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
-.header {
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 35px;
-    margin-top: 35px;
-
-}
-
-.contact-wrapper {
-    display: flex;
-    background-color: #F8F8F8; /* Set background color for the second section */
-}
-
-.contact-wrapper-2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    margin: auto;
-    text-align: center;
-    background-color: #EFEFEF; /* Set background color for the third section */
-}
-
-.text-container {
-    flex: 0 0 30%;
-    margin: 10px;
-}
-
-.text {
-    font-size: 24px;
-}
-
-img {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    border-radius: 8px;
+.paragraph{
+    text-align: justify;
 }
 
 .wrapper {
+    flex: 1; /* Take up remaining vertical space */
+    padding: 20px 150px; /* Add padding as needed */
+    position: relative;
+}
+
+header {
+    background-color: #0F1035;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.notice {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notice {
     display: flex;
-    background-color: #DADADA; /* Set background color for the fourth section */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.notice img {
+    margin-right: 10px; /* Adjust the margin as needed for spacing between image and text */
+}
+
+
+.contact-wrapper-2 img {
+    width: 100%; /* Set the width to 100% to ensure responsiveness */
+    max-height: 200px; /* Set the max height to your desired value */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 8px;
+}
+
+.learn_how_header {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-wrapper,
+.contact-wrapper-2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.contact-wrapper {
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1200px; /* Add max-width for responsiveness */
+    margin: 0 auto;
+}
+
+.machine-section{
+    width:60%;
+    margin-right: 50px;
+}
+.disease-section {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 1200px; /* Add max-width for responsiveness */
+    margin-left: auto;
 }
 
 .photo-section {
-    width: 50%;
-}
-
-.photo-section img {
-    width: 100%;
-    height: auto;
+    width: 40%; /* Set the width for the image section */
 }
 
 .text-section {
-    width: 50%;
-    padding: 20px;
-    background-color: #F5F5F5; /* Set background color for the fifth section */
+    width: 60%; /* Set the width for the text section */
 }
 
+/* Additional styles for images */
+.photo-section img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-section .about_img_3{
+    width: 40%;
+    max-height: auto;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-20%);
+    transform: translateX(-50%);
+}
+
+.text-container {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 8px; /* Border radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation */
+    background-color: #fff; /* Background color */
+    margin: 20px;
+}
+
+.text-container img {
+    max-width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Styles for the diseases section */
 .disease-list {
-    list-style-type: bullet;
-    columns: 3;
-    background-color: #6E98E6;
+    list-style: none;
+    padding: 0;
 }
 
 .disease-list li {
     margin-bottom: 10px;
 }
+
+/* Additional styles for images */
+.photo-section img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .contact-wrapper,
+    .contact-wrapper-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-section,
+    .photo-section {
+        width: 100%;
+    }
+}
+
+
+/* Apply a basic style to the button */
+.simple-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for button hover effect */
+.simple-button:hover {
+    background-color: #2980b9;
+}
+
+
+.about_header {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Add this style to the existing CSS */
+
+/* Styles for the diseases section */
+.disease-list {
+    list-style: circle;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensure equal spacing between columns */
+}
+
+.disease-list li {
+    width: 30%; /* Adjust the width as needed for three columns */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 5px; /* Add padding to prevent text overlap */
+}
+
+

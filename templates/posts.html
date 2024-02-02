@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Post</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/posts.css')}}">
+{% endblock %}
+
+{% block body %}
+
+    {% for message in get_flashed_messages() %}
+        <div class="custom-alert" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    <br/>
+
+    <div class="blog-post">
+    <p class="read-more">
+        <a href="/explore"><i class="fa-solid fa-arrow-left"></i>  Back to Explore</a>
+    </p>
+    <img src="{{ url_for('static', filename='images/' + post.image_path.split('/')[-1]) }}" alt="Blog Image">
+    <h2>{{ post.title }}</h2>
+    <div class="author">By: {{ post.author }}<br/>
+    Posted at: {{ post.date_posted }} | {{ post.slug }} <hr>
+    </div><br/>
+    <!-- Render content with line breaks -->
+    <div>
+        {{ post.content | replace('\n', '<br>') | safe }}
+    </div>
+        <hr><br/>
+
+    </div>
+
+{% endblock %}

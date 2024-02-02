@@ -3,16 +3,48 @@
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
-    background-color: #DCF2F1;
-    height: 100vh;
+    /* background-color: #DCF2F1; */
+    background-image: url('../images/blood-tests.jpg');
+    height: 50vh;
     width: 100%;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
 }
+
+.custom-alert {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999; /* Set a high z-index to ensure it appears above other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #721c24;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 
 .contact-wrapper h1 {
     font-size: 30px; /* Set the font size for the text */
     margin-bottom: 10px; /* Add bottom margin to create space between text and button */
     justify-content: center; /* Center the text */
     text-align: center;
+    font-family: 'PT Serif', serif;
 }
 
 .sym_checker {
@@ -39,6 +71,7 @@
     font-size: 35px;
     margin-left: 35px;
     margin-top: 35px;
+    text-align: center;
 }
 
 .work_how{
@@ -66,3 +99,4 @@ img{
     height:auto;
     border-radius: 8px;
 }
+

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fill_profile.css') }}">
+{% endblock %}
+
+{% block body %}
+    <body class="profile">
+        <div class="profile-container">
+            <h2>Create Your Profile</h2>
+            <form method="POST" class="profile-form">
+                {{ form.csrf_token }}
+                <div class="profile-group">
+                    <label for="profile_pic" class="profile-label">Profile Picture:</label>
+                    {{ form.profile_pic() }}
+                </div>
+                <div class="profile-group">
+                    <label for="username" class="profile-label">Username:</label>
+                    {{ form.username() }}
+                </div>
+                <div class="profile-group">
+                    <label for="dob" class="profile-label">Date of Birth:</label>
+                    {{ form.dob() }}
+                </div>
+                <div class="profile-group">
+                    <label for="gender" class="profile-label">Gender:</label>
+                    {{ form.gender() }}
+                </div>
+                <div class="profile-group">
+                    <label for="age" class="profile-label">Age:</label>
+                    {{ form.age() }}
+                </div>
+                <div class="profile-group">
+                    {{ form.submit() }}
+                </div>
+            </form>
+        </div>
+    </body>
+{% endblock %}

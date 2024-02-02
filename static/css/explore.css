@@ -1,10 +1,5 @@
 /* explore.css */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
 header {
     font-size: 30px;
     font-weight: bolder;
@@ -26,7 +21,6 @@ header {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-    text-align: justify;
 }
 
 img {
@@ -38,17 +32,47 @@ img {
 h2 {
     font-size: 20px;
     margin-top: 10px;
-    text-align: left;
 }
 
 p {
     font-size: 16px;
 }
 
-a {
-    display: block;
+.blog-links {
+    display: flex;
+    justify-content: space-between;
     margin-top: 10px;
+}
+
+.button-link {
     text-decoration: none;
-    color: #007bff;
+    background-color: #0D9EBB;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-weight: bold;
+}
+.button-link:hover{
+    color: #00ddff;
+    text-decoration: underline;
+}
+
+.delete_btn {
+    background-color: #FF4242;
+}
+
+.new_post{
+    text-decoration: none;
+    float: right;
+    margin-right: 20px;
+    background-color: #0D9EBB;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.new_post:hover{
+    color: #00ddff;
+    text-decoration: underline;
 }
