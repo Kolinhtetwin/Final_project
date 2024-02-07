@@ -27,7 +27,7 @@
     </div><br/>
     <!-- Render content with line breaks -->
     <div>
-        {{ post.content | replace('\n', '<br>') | safe }}
+        {{ post.content | replace('\n', '\n') | safe }}
     </div>
         <hr><br/>
 

@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navigation_style.css') }}">
     <script src="https://kit.fontawesome.com/4abb1433f5.js" crossorigin="anonymous"></script>
-     <script>
-    function closeAlert(button) {
-        var alert = button.parentElement;
-        alert.style.opacity = 0;
+    <script>
+        function closeAlert(button) {
+            var alert = button.parentElement;
+            alert.style.opacity = 0;
+            setTimeout(function () {
+                alert.style.display = "none";
+            }, 500);
+        }
+        document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
-            alert.style.display = "none";
-        }, 500);
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(function () {
-      var alerts = document.querySelectorAll('.custom-alert');
-      alerts.forEach(function (alert) {
-        alert.remove();
-      });
-    }, 5000);
-    });
+          var alerts = document.querySelectorAll('.custom-alert');
+          alerts.forEach(function (alert) {
+            alert.remove();
+          });
+        }, 5000);
+        });
     </script>
     {% block head %}{% endblock %}
 </head>
@@ -59,6 +59,12 @@
 
     <!-- Content wrapper -->
     <div class="wrapper">
+        {% for message in get_flashed_messages() %}
+            <div class="custom-alert" role="alert">
+                <span>{{ message }}</span>
+                <button type="button" class="btn-close" onclick="closeAlert(this)" aria-label="Close">X</button>
+            </div>
+        {% endfor %}
         {% block body %}{% endblock %}
     </div>
 
@@ -67,8 +73,7 @@
             <p class="logo_name">MedScan Insight</p>
         </div>
         <div>
-            <a href="">Terms and Conditions</a>
-            <a href="">Privacy</a>
+            <a href="/privacy">Privacy</a>
             @ The symptom checker on this website is not a substitute for professional medical advice, diagnosis, or
             treatment.
         </div>

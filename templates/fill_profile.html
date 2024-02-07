@@ -6,6 +6,13 @@
 {% endblock %}
 
 {% block body %}
+    {% for message in get_flashed_messages() %}
+        <div class="custom-alert" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="btn-close" onclick="closeAlert(this)" aria-label="Close">X</button>
+        </div>
+    {% endfor %}
+
     <body class="profile">
         <div class="profile-container">
             <h2>Create Your Profile</h2>

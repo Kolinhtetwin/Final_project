@@ -63,13 +63,13 @@ p {
 
 .new_post{
     text-decoration: none;
-    float: right;
-    margin-right: 20px;
     background-color: #0D9EBB;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
+    font-size: 25px;
+    margin-left: 165vh;
 }
 
 .new_post:hover{

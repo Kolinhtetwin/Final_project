@@ -1,8 +1,10 @@
-import logging
 import os
+from sqlite3 import IntegrityError
+from logger_config import configure_logger
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_user, login_required, logout_user, current_user
+from werkzeug.routing import ValidationError
 from werkzeug.utils import secure_filename
 
 from init_app import db, app
@@ -12,13 +14,23 @@ from forms import LoginForm, RegistrationForm, ProfileEditForm, ProfileForm
 login_manage = Blueprint('login_manage', __name__)
 
 
+logger = configure_logger()
+
 
 @login_manage.route('/register', methods=['GET', 'POST'])
 def register():
+    logger.info('Register page load successfully \n')
     form = RegistrationForm()
-    try:
-        if form.validate_on_submit():
-
+    if form.validate_on_submit():
+        logger.info("Validate on submit function working")
+        existing_user = User.query.filter_by(email=form.email.data)
+        logger.info("This is existing user", existing_user)
+        # Execute the query
+        result = existing_user.first()
+        # Log information about the result
+        logger.info(f"Query result of existing_user.first(): {result}")
+        if existing_user.first() is None:
+            logger.info("No email registered!")
             user = User(email=form.email.data, user_type=form.user_type.data, password=form.password.data)
             user.set_password(form.password.data)
             db.session.add(user)
@@ -27,8 +39,11 @@ def register():
             flash('Congratulations, you are now a registered user!')
             # Redirect to profile completion page after registration
             return redirect(url_for('login_manage.complete_profile'))
-    except Exception as e:
-        print(f"An error occurred: {e}")
+        else:
+            flash("Email already exists. Please use a different email address.")
+            logger.info("email already registered log")
+            return redirect(url_for('login_manage.register'))
+
     return render_template('register.html', title='Register', form=form)
 
 
@@ -36,34 +51,40 @@ def register():
 def complete_profile():
     form = ProfileForm()
     if form.validate_on_submit():
-        if form.profile_pic.data:
-            # Handle file upload
-            image = form.profile_pic.data
-            filename = secure_filename(image.filename)
-            profile_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            image.save(profile_path)
+        user = Profile.query.filter_by(username=form.username.data).first()
+        if user is None:
+            if form.profile_pic.data:
+                # Handle file upload
+                image = form.profile_pic.data
+                filename = secure_filename(image.filename)
+                profile_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                image.save(profile_path)
 
-            print(f"Filename: {filename}")
-            print(f"Profile Path: {profile_path}")
+                print(f"Filename: {filename}")
+                print(f"Profile Path: {profile_path}")
+            else:
+                profile_path = os.path.join(app.config['UPLOAD_FOLDER'], 'default_profile_pic.jpeg')
+                print(f"Default Profile Path: {profile_path}")
+            full_profile = Profile(user_id=int(current_user.id), profile_pic=profile_path, username=form.username.data,
+                                   age=form.age.data,
+                                   gender=form.gender.data, dob=form.dob.data)
+            db.session.add(full_profile)
+            db.session.commit()
+            flash('Profile completed successfully!')
+            return redirect(url_for('login_manage.profile'))
         else:
-            profile_path = os.path.join(app.config['UPLOAD_FOLDER'], 'default_profile_pic.jpeg')
-            print(f"Default Profile Path: {profile_path}")
-        full_profile = Profile(user_id=current_user.id, profile_pic=profile_path, username=form.username.data, age=form.age.data,
-                               gender=form.gender.data, dob=form.dob.data)
-        db.session.add(full_profile)
-        db.session.commit()
-        flash('Profile completed successfully!')
-        return redirect(url_for('login_manage.profile'))
+            flash("Username is already exist! Please use the different username!")
+            return redirect(url_for('login_manage.complete_profile'))
+
     return render_template('fill_profile.html', title='Complete Profile', form=form)
 
-
+# Log In to the account
 @login_manage.route('/login_route', methods=['GET', 'POST'])
 def login_route():
     form = LoginForm()
 
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-
         try:
             if user.check_password(form.password.data) and user is not None:
                 login_user(user)
@@ -72,13 +93,7 @@ def login_route():
                 # Check if the user has filled out the profile
                 if not user.has_filled_profile():
                     return redirect(url_for('login_manage.complete_profile'))
-
-                next = request.args.get('next')
-
-                if next is None or not next[0] == '/':
-                    next = url_for('login_manage.profile')  # Set a default route
-
-                return redirect(next)
+                return redirect(url_for('login_manage.profile'))
             else:
                 flash("Incorrect Password!")
                 return redirect(url_for('login_manage.login_route'))
@@ -102,7 +117,7 @@ def logout_route():
 @login_manage.route('/profile')
 @login_required
 def profile():
-    # Assuming there's a one-to-one relationship between User and Profile
+    # There's a one-to-one relationship between User and Profile
     user_profile = Profile.query.filter_by(user_id=current_user.id).first()
 
     if user_profile:
@@ -135,6 +150,7 @@ def profile():
         return redirect(url_for('login_manage.complete_profile'))
 
 
+# Edit Profile route
 @login_manage.route('/profile/edit/<int:user_id>', methods=['GET', 'POST'])
 @login_required
 def edit_profile(user_id):
@@ -186,3 +202,8 @@ def edit_profile(user_id):
     form.gender.data = user.profile.gender
 
     return render_template('edit_profile.html', form=form, user_id=user_id, active_page='profile')
+
+
+@login_manage.route('/privacy')
+def privacy_page():
+    return render_template('privacy.html')

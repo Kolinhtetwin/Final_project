@@ -5,31 +5,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
-<script>
-    function closeAlert(button) {
-    var alert = button.parentElement;
-    alert.style.opacity = 0;
-    setTimeout(function () {
-        alert.style.display = "none";
-    }, 500);
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(function () {
-      var alerts = document.querySelectorAll('.custom-alert');
-      alerts.forEach(function (alert) {
-        alert.remove();
-      });
-    }, 5000);
-    });
-</script>
 {% endblock %}
 {% block body %}
-    {% for message in get_flashed_messages() %}
-        <div class="custom-alert" role="alert">
-            <span>{{ message }}</span>
-            <button type="button" class="btn-close" onclick="closeAlert(this)" aria-label="Close">X</button>
-        </div>
-    {% endfor %}
 
     <div class="contact-wrapper">
         <h1>Health care is not privilege.<br>Check your health now with <br>symptom checker now.</h1>

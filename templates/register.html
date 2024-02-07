@@ -3,9 +3,32 @@
 {% block head %}
     <title>Registration</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <script>
+        function closeAlert(button) {
+            var alert = button.parentElement;
+            alert.style.opacity = 0;
+            setTimeout(function () {
+                alert.style.display = "none";
+            }, 500);
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          var alerts = document.querySelectorAll('.custom-alert');
+          alerts.forEach(function (alert) {
+            alert.remove();
+          });
+        }, 5000);
+        });
+    </script>
 {% endblock %}
 
 {% block body %}
+    {% for message in get_flashed_messages() %}
+        <div class="custom-alert" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="btn-close" onclick="closeAlert(this)" aria-label="Close">X</button>
+        </div>
+    {% endfor %}
     <body class="register">
         <div class="registration-container">
             <h2>Registration</h2>

@@ -1,0 +1,41 @@
+
+.privacy-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.subsection {
+    margin-bottom: 10px;
+}
+
+.logo > img {
+    width: 200px; /* Set the desired width */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.back_to_home {
+    text-align: left;
+    margin-top: 20px;
+
+}
+
+.back_to_home a {
+    text-decoration: none;
+    background-color: #0D9EBB;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.back_to_home a:hover{
+    color: black;
+}

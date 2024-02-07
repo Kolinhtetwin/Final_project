@@ -8,6 +8,12 @@
 {% endblock %}
 
 {% block body %}
+{% for message in get_flashed_messages() %}
+    <div class="custom-alert" role="alert">
+        <span>{{ message }}</span>
+        <button type="button" class="btn-close" onclick="closeAlert(this)" aria-label="Close">X</button>
+    </div>
+{% endfor %}
     <body class="login-body">
         <div class="login-container">
             <h2>Login</h2>
@@ -15,7 +21,7 @@
                 {{ form.csrf_token }}
 
                 <label for="email">Email: </label>
-                {{ form.email(size=30, id='email', required=True) }}
+                {{ form.email(size=30, id='email', required=True, type='email') }}
 
                 <label for="password">Password:</label>
                 {{ form.password(size=30, id='password', required=True) }}

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from flask import flash
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, IntegerField, DateField, SelectField, IntegerField
@@ -23,10 +24,10 @@ class ProfileForm(FlaskForm):
     age = IntegerField('Age', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-    def validate_username(self, username):
-        user = Profile.query.filter_by(username=username.data).first()
+    def validate_username_data(self):
+        user = Profile.query.filter_by(username=self.username.data).first()
         if user is not None:
-            raise ValidationError('Please use a different username.')
+            flash('That username is taken. Please choose a different user name.')
 
 class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -38,11 +39,11 @@ class RegistrationForm(FlaskForm):
                                      validators=[DataRequired(),
                                                  EqualTo('password')])
     submit = SubmitField('Submit')
-
+"""
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            raise ValidationError('Please use a different email address.')
+            raise ValidationError('Please use a different email address.')"""
 
 
 class LoginForm(FlaskForm):
