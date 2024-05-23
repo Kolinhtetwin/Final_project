@@ -6,16 +6,6 @@
 {% endblock %}
 
 {% block body %}
-
-    {% for message in get_flashed_messages() %}
-        <div class="custom-alert" role="alert">
-          {{ message }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    {% endfor %}
-
-    <br/>
-
     <div class="blog-post">
     <p class="read-more">
         <a href="/explore"><i class="fa-solid fa-arrow-left"></i>  Back to Explore</a>

@@ -4,33 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7835e05-3b28-4569-855c-050169a39b96" name="Changes" comment="Clean the database">
-      <change afterPath="$PROJECT_DIR$/logger_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/privacy.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/privacy.html" afterDir="false" />
+    <list default="true" id="f7835e05-3b28-4569-855c-050169a39b96" name="Changes" comment="Finish the application and add some error flash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogpost.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogpost.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/blog_post_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/blog_post_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/blog_post_3.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/add_post.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/add_post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/blog-post.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/blog-post.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/explore.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/explore.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/blog_post_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/blog_post_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fill_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fill_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/posts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symptom_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/symptom_checker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/user.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,23 +59,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Flask server.Final_project.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Flask server.Final_project.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/linhtetwin/Final_individual_project/Final_project",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Final_project" type="Python.FlaskServer">
       <module name="Final_project" />
@@ -125,7 +114,12 @@
       <workItem from="1706243606221" duration="319000" />
       <workItem from="1706243939150" duration="30325000" />
       <workItem from="1707055647636" duration="22936000" />
-      <workItem from="1707313289817" duration="4053000" />
+      <workItem from="1707313289817" duration="7783000" />
+      <workItem from="1707460387820" duration="1322000" />
+      <workItem from="1707479076636" duration="3358000" />
+      <workItem from="1707834823269" duration="2408000" />
+      <workItem from="1708358239579" duration="2781000" />
+      <workItem from="1708966555560" duration="1304000" />
     </task>
     <task id="LOCAL-00001" summary="Testing on github">
       <option name="closed" value="true" />
@@ -167,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706870700350</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finish the application and add some error flash">
+      <option name="closed" value="true" />
+      <created>1707318060273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707318060273</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,9 +191,7 @@
     <MESSAGE value="Adding all the files with the blog-post-2" />
     <MESSAGE value="Add the final project" />
     <MESSAGE value="Clean the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean the database" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Final_project$Final_project.coverage" NAME="Final_project Coverage Results" MODIFIED="1707147137440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <MESSAGE value="Finish the application and add some error flash" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish the application and add some error flash" />
   </component>
 </project>

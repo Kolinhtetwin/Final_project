@@ -7,12 +7,14 @@ from model import Posts
 
 blogpost = Blueprint('blogpost', __name__)
 
+
 # Showing the blog post with the one
 @blogpost.route('/post/<int:post_id>')
 def show_post(post_id):
     active_page = 'explore'
     post = Posts.query.get_or_404(post_id)
     return render_template('posts.html', post=post, active_page=active_page)
+
 
 # Edit the blog post again
 @blogpost.route('/post/edit/<int:post_id>', methods=['GET', 'POST'])
@@ -50,11 +52,11 @@ def edit_post(post_id):
 
             # Update Database
             db.session.commit()
-            flash('Post has been updated successfully!', 'success')
+            # flash('Post has been updated successfully!')
             return redirect(url_for('blogpost.show_post', post_id=post.id))
         else:
             # No changes, display a flash message
-            flash('No changes made to the post.', 'info')
+            flash('No changes made to the post.')
             return redirect(url_for('blogpost.show_post', post_id=post.id))
 
     # Pre-fill form data
@@ -66,6 +68,7 @@ def edit_post(post_id):
     form.content.data = post.content
 
     return render_template('edit_post.html', form=form, post=post, active_page='explore')
+
 
 @blogpost.route('/post/delete/<int:post_id>', methods=['GET', 'POST'])
 def delete_post(post_id):
@@ -80,7 +83,6 @@ def delete_post(post_id):
         # Grab all the posts from the database
         post = Posts.query.get_or_404(post_id)
         return render_template('posts.html', post=post, active_page='explore')
-
     except:
         # Return a error message
         flash("Whoops! There was a problem deleting blog post, try again later!", "alert")

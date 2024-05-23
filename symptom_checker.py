@@ -106,3 +106,5 @@ def result():
                            predicted_disease_description2=ml.predicted_disease_description2,
                            precaution_list2=ml.precaution_list2,
                            active_page= 'symptom_checker')
+
+
