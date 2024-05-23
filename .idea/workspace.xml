@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7835e05-3b28-4569-855c-050169a39b96" name="Changes" comment="Finish the application and add some error flash">
+    <list default="true" id="f7835e05-3b28-4569-855c-050169a39b96" name="Changes" comment="Add the psycopg2-binary">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogpost.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogpost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/blog_post_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/blog_post_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/blog_post_3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/add_post.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/add_post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/explore.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/explore.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/posts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symptom_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/symptom_checker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/edit_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/user.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +36,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -169,7 +160,21 @@
       <option name="project" value="LOCAL" />
       <updated>1707318060273</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add the psycopg2-binary">
+      <created>1716457028145</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716457028145</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add the psycopg2-binary">
+      <created>1716457045506</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716457045506</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +197,7 @@
     <MESSAGE value="Add the final project" />
     <MESSAGE value="Clean the database" />
     <MESSAGE value="Finish the application and add some error flash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish the application and add some error flash" />
+    <MESSAGE value="Add the psycopg2-binary" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the psycopg2-binary" />
   </component>
 </project>
